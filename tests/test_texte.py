@@ -28,7 +28,36 @@ class TestCompterVoyelles:
     def test_compter_voyelles_simple(self):
         assert voy("hello") == 2
     
-    # Beaucoup de tests manquants
+    def test_compter_voyelles_aucune(self):
+        assert voy("bcdfg") == 0
+    
+    def test_compter_voyelles_toutes(self):
+        assert voy("aeiou") == 5
+    
+    def test_compter_voyelles_majuscules(self):
+        assert voy("HELLO") == 2
+    
+    def test_compter_voyelles_accents(self):
+        assert voy("éèêë") == 4
+
+
+class TestEstPalindrome:
+    """Tests pour la fonction est_palindrome."""
+    
+    def test_palindrome_simple(self):
+        assert palin("radar") is True
+    
+    def test_palindrome_phrase(self):
+        assert palin("A man a plan a canal Panama") is True
+    
+    def test_non_palindrome(self):
+        assert palin("hello") is False
+    
+    def test_palindrome_vide(self):
+        assert palin("") is True
+    
+    def test_palindrome_un_caractere(self):
+        assert palin("a") is True
 
 
 class TestCompterMots:
@@ -77,6 +106,9 @@ class TestSupprimerEspacesMultiples:
         
     def test_supprimer_espaces_debut_fin(self):
         assert supprespace("  hello world  ") == "hello world"
-        
+    
     def test_aucun_espace_multiple(self):
         assert supprespace("hello world") == "hello world"
+    
+    def test_espaces_uniquement(self):
+        assert supprespace("   ") == ""

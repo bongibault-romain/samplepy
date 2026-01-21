@@ -23,10 +23,9 @@ def min(l):   # trouver le min
 
 def moy(l):   # moyenne
 	# calcul de la moyenne
-	try:   # essayer
-		return sum(l)/len(l)   # division
-	except:   # si erreur
-		pass   # rien
+	if not l:
+		raise ValueError("La liste ne peut pas être vide")
+	return sum(l)/len(l)   # division
 
 
 def pairs(l):   # filtrer pairs

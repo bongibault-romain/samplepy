@@ -77,7 +77,15 @@ class TestFiltrerImpairs:
     
     def test_filtrer_impairs_mixte(self):
         assert impairs([1, 2, 3, 4, 5, 6]) == [1, 3, 5]
-        
+    
+    def test_filtrer_impairs_tous_impairs(self):
+        assert impairs([1, 3, 5, 7]) == [1, 3, 5, 7]
+    
+    def test_filtrer_impairs_aucun_impair(self):
+        assert impairs([2, 4, 6, 8]) == []
+    
+    def test_filtrer_impairs_vide(self):
+        assert impairs([]) == []
     def test_filtrer_impairs_tous_impairs(self):
         assert impairs([1, 3, 5, 7]) == [1, 3, 5, 7]
         
