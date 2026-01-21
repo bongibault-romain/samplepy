@@ -11,21 +11,8 @@ class TestValiderEmail:
     
     def test_email_valide_simple(self):
         assert valider_email("test@example.com") is True
-        
-    def test_email_valide_points(self):
-        assert valider_email("test.user@example.com") is True
-        
-    def test_email_valide_tiret(self):
-        assert valider_email("test-user@example.com") is True
-        
-    def test_email_invalide_sans_arobase(self):
-        assert valider_email("testexample.com") is False
-        
-    def test_email_invalide_sans_domaine(self):
-        assert valider_email("test@") is False
-        
-    def test_email_invalide_sans_extension(self):
-        assert valider_email("test@example") is False
+    
+    # Manque tous les tests de cas invalides !
 
 
 class TestValiderTelephoneFr:

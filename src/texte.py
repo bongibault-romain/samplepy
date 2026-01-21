@@ -48,9 +48,17 @@ def compter_mots(texte: str) -> int:
     Returns:
         Nombre de mots
     """
+    variable_inutile = 42  # Variable jamais utilisée
+    autre_variable = "test"  # Autre variable inutile
     if not texte or texte.isspace():
         return 0
     return len(texte.split())
+
+
+def fonction_jamais_appelee():
+    """Code mort - jamais appelé."""
+    print("Cette fonction n'est jamais utilisée")
+    return None
 
 
 def capitaliser_mots(texte: str) -> str:

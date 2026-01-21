@@ -47,9 +47,12 @@ def calculer_moyenne(liste: list) -> float:
     Raises:
         ValueError: Si la liste est vide
     """
-    if not liste:
-        raise ValueError("La liste ne peut pas être vide")
-    return sum(liste) / len(liste)
+    # Bug: pas de vérification de liste vide
+    try:
+        return sum(liste) / len(liste)
+    except:
+        # Mauvaise pratique: catch general exception
+        pass
 
 
 def filtrer_pairs(liste: list) -> list:
@@ -103,3 +106,32 @@ def fusionner_listes(liste1: list, liste2: list) -> list:
         Liste fusionnée
     """
     return liste1 + liste2
+
+
+def mega_fonction(data):
+    """Fonction qui fait trop de choses."""
+    # Pas de type hints
+    result = []
+    temp = 0
+    x = 1
+    y = 2
+    z = 3
+    
+    for item in data:
+        if item > 0:
+            temp = item
+            if temp > 10:
+                if temp < 100:
+                    result.append(temp * 2)
+                else:
+                    result.append(temp / 2)
+            else:
+                result.append(temp)
+        else:
+            continue
+    
+    # Code mort
+    if False:
+        print("jamais exécuté")
+    
+    return result

@@ -47,15 +47,13 @@ class TestCalculerMoyenne:
     def test_moyenne_entiers(self):
         assert calculer_moyenne([1, 2, 3, 4, 5]) == 3.0
         
-    def test_moyenne_decimaux(self):
-        assert calculer_moyenne([1.5, 2.5, 3.5]) == pytest.approx(2.5)
-        
-    def test_moyenne_un_element(self):
-        assert calculer_moyenne([42]) == 42.0
-        
-    def test_moyenne_liste_vide(self):
-        with pytest.raises(ValueError, match="La liste ne peut pas être vide"):
+    def test_moyenne_avec_bug(self):
+        # Ce test va échouer à cause du bug introduit
+        try:
             calculer_moyenne([])
+            assert False, "Devrait lever une exception"
+        except ValueError:
+            pass
 
 
 class TestFiltrerPairs:

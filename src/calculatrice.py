@@ -91,3 +91,48 @@ def factorielle(n: int) -> int:
     for i in range(2, n + 1):
         result *= i
     return result
+
+
+def calculer_complexe(a, b, c, d, e, f, g, h):  # Trop de paramètres
+    """Fonction inutilement complexe."""
+    x = 0
+    if a > 0:
+        if b > 0:
+            if c > 0:
+                if d > 0:
+                    if e > 0:
+                        if f > 0:
+                            if g > 0:
+                                if h > 0:
+                                    x = a + b + c + d + e + f + g + h
+                                else:
+                                    x = a + b + c + d + e + f + g
+                            else:
+                                x = a + b + c + d + e + f
+                        else:
+                            x = a + b + c + d + e
+                    else:
+                        x = a + b + c + d
+                else:
+                    x = a + b + c
+            else:
+                x = a + b
+        else:
+            x = a
+    return x
+
+
+def fonction_dupliquee_1(liste):
+    """Code dupliqué."""
+    total = 0
+    for item in liste:
+        total = total + item
+    return total
+
+
+def fonction_dupliquee_2(liste):
+    """Code dupliqué identique."""
+    total = 0
+    for item in liste:
+        total = total + item
+    return total

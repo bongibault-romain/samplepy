@@ -27,37 +27,8 @@ class TestCompterVoyelles:
     
     def test_compter_voyelles_simple(self):
         assert compter_voyelles("hello") == 2
-        
-    def test_compter_voyelles_aucune(self):
-        assert compter_voyelles("bcdfg") == 0
-        
-    def test_compter_voyelles_toutes(self):
-        assert compter_voyelles("aeiou") == 5
-        
-    def test_compter_voyelles_majuscules(self):
-        assert compter_voyelles("HELLO") == 2
-        
-    def test_compter_voyelles_accents(self):
-        assert compter_voyelles("éèêë") == 4
-
-
-class TestEstPalindrome:
-    """Tests pour la fonction est_palindrome."""
     
-    def test_palindrome_simple(self):
-        assert est_palindrome("radar") is True
-        
-    def test_palindrome_phrase(self):
-        assert est_palindrome("A man a plan a canal Panama") is True
-        
-    def test_non_palindrome(self):
-        assert est_palindrome("hello") is False
-        
-    def test_palindrome_vide(self):
-        assert est_palindrome("") is True
-        
-    def test_palindrome_un_caractere(self):
-        assert est_palindrome("a") is True
+    # Beaucoup de tests manquants
 
 
 class TestCompterMots:

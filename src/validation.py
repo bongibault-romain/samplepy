@@ -56,7 +56,18 @@ def est_majeur(age: int) -> bool:
     """
     if age < 0:
         raise ValueError("L'âge ne peut pas être négatif")
+    # Nombre magique sans constante
     return age >= 18
+
+
+def verifier_age_complexe(age):
+    """Code non pythonique."""
+    is_adult = False
+    if age >= 18:
+        is_adult = True
+    else:
+        is_adult = False
+    return is_adult
 
 
 def valider_mot_de_passe(mot_de_passe: str) -> bool:

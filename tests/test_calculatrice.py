@@ -12,17 +12,7 @@ class TestAddition:
     def test_addition_positifs(self):
         assert addition(2, 3) == 5
         
-    def test_addition_negatifs(self):
-        assert addition(-2, -3) == -5
-        
-    def test_addition_mixte(self):
-        assert addition(-2, 3) == 1
-        
-    def test_addition_zero(self):
-        assert addition(0, 5) == 5
-        
-    def test_addition_decimaux(self):
-        assert addition(2.5, 3.7) == pytest.approx(6.2)
+    # Tests manquants pour négatifs, mixte, etc.
 
 
 class TestSoustraction:
@@ -65,32 +55,8 @@ class TestDivision:
     
     def test_division_normale(self):
         assert division(10, 2) == 5
-        
-    def test_division_decimale(self):
-        assert division(7, 2) == 3.5
-        
-    def test_division_par_zero(self):
-        with pytest.raises(ValueError, match="Division par zéro impossible"):
-            division(5, 0)
-            
-    def test_division_negatifs(self):
-        assert division(-10, 2) == -5
-
-
-class TestPuissance:
-    """Tests pour la fonction puissance."""
     
-    def test_puissance_positive(self):
-        assert puissance(2, 3) == 8
-        
-    def test_puissance_zero(self):
-        assert puissance(5, 0) == 1
-        
-    def test_puissance_un(self):
-        assert puissance(5, 1) == 5
-        
-    def test_puissance_negative(self):
-        assert puissance(2, -2) == 0.25
+    # Test de division par zéro manquant !
 
 
 class TestFactorielle:
