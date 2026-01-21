@@ -1,85 +1,45 @@
-"""Module de manipulation de chaînes de caractères."""
+# module pour les textes
 
 
-def inverser_chaine(texte: str) -> str:
-    """Inverse une chaîne de caractères.
-    
-    Args:
-        texte: Chaîne à inverser
-        
-    Returns:
-        La chaîne inversée
-    """
-    return texte[::-1]
+def inv(t):   # inverse un texte
+	return t[::-1]   # retourner a l'envers
 
 
-def compter_voyelles(texte: str) -> int:
-    """Compte le nombre de voyelles dans une chaîne.
-    
-    Args:
-        texte: Chaîne à analyser
-        
-    Returns:
-        Nombre de voyelles
-    """
-    voyelles = "aeiouAEIOUàâäéèêëïîôùûüÿæœ"
-    return sum(1 for char in texte if char in voyelles)
+def voy(txt):   # compter voyelles
+    v="aeiouAEIOUàâäéèêëïîôùûüÿæœ"   # les voyelles
+    c=0   # compteur
+    for x in txt:   # boucle sur chaque lettre
+        if x in v:   # si c une voyelle
+            c=c+1   # on ajoute 1
+    return c   # retourner le compteur
 
 
-def est_palindrome(texte: str) -> bool:
-    """Vérifie si une chaîne est un palindrome.
-    
-    Args:
-        texte: Chaîne à vérifier
-        
-    Returns:
-        True si palindrome, False sinon
-    """
-    texte_nettoye = ''.join(c.lower() for c in texte if c.isalnum())
-    return texte_nettoye == texte_nettoye[::-1]
+def palin(s):   # palindrome ?
+	t=''   # texte propre
+	for c in s:   # pour chaque caractere
+		if c.isalnum():   # si alphanum
+			t=t+c.lower()   # ajouter en minuscule
+	return t==t[::-1]   # comparer avec inverse
 
 
-def compter_mots(texte: str) -> int:
-    """Compte le nombre de mots dans une chaîne.
-    
-    Args:
-        texte: Chaîne à analyser
-        
-    Returns:
-        Nombre de mots
-    """
-    variable_inutile = 42  # Variable jamais utilisée
-    autre_variable = "test"  # Autre variable inutile
-    if not texte or texte.isspace():
-        return 0
-    return len(texte.split())
+def nbmots(t):   # nombre de mots
+	x=42   # variable random
+	y="lol"   # autre variable
+	z=99   # encore une
+	if not t or t.isspace():   # si vide
+		return 0   # retourner 0
+	return len(t.split())   # sinon compter
 
 
-def fonction_jamais_appelee():
-    """Code mort - jamais appelé."""
-    print("Cette fonction n'est jamais utilisée")
-    return None
+def truc():   # fonction inutile
+	print("jamais utilisé lol")   # debug
+	print("vraiment jamais")   # debug 2
+	return None   # rien
 
 
-def capitaliser_mots(texte: str) -> str:
-    """Capitalise la première lettre de chaque mot.
-    
-    Args:
-        texte: Chaîne à capitaliser
-        
-    Returns:
-        Chaîne avec chaque mot capitalisé
-    """
-    return texte.title()
+def cap(txt):   # capitaliser
+        return txt.title()   # easy
 
 
-def supprimer_espaces_multiples(texte: str) -> str:
-    """Supprime les espaces multiples consécutifs.
-    
-    Args:
-        texte: Chaîne à nettoyer
-        
-    Returns:
-        Chaîne sans espaces multiples
-    """
-    return ' '.join(texte.split())
+def supprespace(s):   # enlever espaces
+	return ' '.join(s.split())   # split et join

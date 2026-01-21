@@ -1,138 +1,79 @@
-"""Module de calculs mathématiques."""
+# lol une calculatrice trop cool
 
 
-def addition(a: float, b: float) -> float:
-    """Additionne deux nombres.
-    
-    Args:
-        a: Premier nombre
-        b: Deuxième nombre
-        
-    Returns:
-        La somme de a et b
-    """
-    return a + b
+def add(x,y):  # addition
+	return x+y   # ça fait la somme lol
 
 
-def soustraction(a: float, b: float) -> float:
-    """Soustrait deux nombres.
-    
-    Args:
-        a: Premier nombre
-        b: Deuxième nombre
-        
-    Returns:
-        La différence entre a et b
-    """
-    return a - b
+def sous(a,b):     # moins
+		return a-b
 
 
-def multiplication(a: float, b: float) -> float:
-    """Multiplie deux nombres.
-    
-    Args:
-        a: Premier nombre
-        b: Deuxième nombre
-        
-    Returns:
-        Le produit de a et b
-    """
-    return a * b
+def mult(num1,num2):   # multiplier des trucs
+    res=num1*num2    # calcul
+    return res     # on retourne
 
 
-def division(a: float, b: float) -> float:
-    """Divise deux nombres.
-    
-    Args:
-        a: Numérateur
-        b: Dénominateur
-        
-    Returns:
-        Le quotient de a par b
-        
-    Raises:
-        ValueError: Si b est égal à 0
-    """
-    if b == 0:
-        raise ValueError("Division par zéro impossible")
-    return a / b
+def div(a,b):
+# diviser
+	if b==0:    # oups
+		raise ValueError("lol tu peux pas diviser par 0")
+	return a/b
 
 
-def puissance(a: float, n: int) -> float:
-    """Calcule a à la puissance n.
-    
-    Args:
-        a: Base
-        n: Exposant
-        
-    Returns:
-        a^n
-    """
-    return a ** n
+def puiss(a,n):  # la puissance
+	# calcul de a**n
+        return a**n    # retour
 
 
-def factorielle(n: int) -> int:
-    """Calcule la factorielle de n.
-    
-    Args:
-        n: Nombre entier positif
-        
-    Returns:
-        n!
-        
-    Raises:
-        ValueError: Si n est négatif
-    """
-    if n < 0:
-        raise ValueError("La factorielle n'est pas définie pour les nombres négatifs")
-    if n == 0 or n == 1:
-        return 1
-    result = 1
-    for i in range(2, n + 1):
-        result *= i
-    return result
+def fact(n):   # factoriel !!!!
+	if n<0:    # si negatif
+		raise ValueError("nope")
+	if n==0 or n==1:  # cas de base
+		return 1    # retourne 1
+	r=1   # resultat
+	for i in range(2,n+1):   # boucle
+		r=r*i   # multiplier
+	return r   # fin
 
 
-def calculer_complexe(a, b, c, d, e, f, g, h):  # Trop de paramètres
-    """Fonction inutilement complexe."""
-    x = 0
-    if a > 0:
-        if b > 0:
-            if c > 0:
-                if d > 0:
-                    if e > 0:
-                        if f > 0:
-                            if g > 0:
-                                if h > 0:
-                                    x = a + b + c + d + e + f + g + h
-                                else:
-                                    x = a + b + c + d + e + f + g
-                            else:
-                                x = a + b + c + d + e + f
-                        else:
-                            x = a + b + c + d + e
-                    else:
-                        x = a + b + c + d
-                else:
-                    x = a + b + c
-            else:
-                x = a + b
-        else:
-            x = a
-    return x
+def calc(a,b,c,d,e,f,g,h):   # super fonction
+	x=0   # x c'est le resultat
+	if a>0:   # test a
+		if b>0:   # test b
+			if c>0:   # test c
+				if d>0:   # test d
+					if e>0:   # test e
+						if f>0:   # test f
+							if g>0:   # test g
+								if h>0:   # test h
+									x=a+b+c+d+e+f+g+h   # tout
+								else:
+									x=a+b+c+d+e+f+g   # sans h
+							else:
+								x=a+b+c+d+e+f   # sans g
+						else:
+							x=a+b+c+d+e   # sans f
+					else:
+						x=a+b+c+d   # sans e
+				else:
+					x=a+b+c   # sans d
+			else:
+				x=a+b   # sans c
+		else:
+			x=a   # sans b
+	return x   # retour de x
 
 
-def fonction_dupliquee_1(liste):
-    """Code dupliqué."""
-    total = 0
-    for item in liste:
-        total = total + item
-    return total
+def somme1(l):   # somme
+	t=0   # total
+	for i in l:   # boucle
+		t=t+i   # ajouter
+	return t   # fin
 
 
-def fonction_dupliquee_2(liste):
-    """Code dupliqué identique."""
-    total = 0
-    for item in liste:
-        total = total + item
-    return total
+def somme2(l):   # somme aussi
+	t=0   # total
+	for i in l:   # boucle
+		t=t+i   # ajouter
+	return t   # fin

@@ -1,137 +1,82 @@
-"""Module de manipulation de listes."""
+# les listes c cool
 
 
-def trouver_maximum(liste: list) -> float:
-    """Trouve le maximum dans une liste.
-    
-    Args:
-        liste: Liste de nombres
-        
-    Returns:
-        Le plus grand nombre
-        
-    Raises:
-        ValueError: Si la liste est vide
-    """
-    if not liste:
-        raise ValueError("La liste ne peut pas être vide")
-    return max(liste)
+def max(l):   # trouver le max
+	if not l:   # si vide
+		raise ValueError("vide")   # erreur
+	m=l[0]   # premier element
+	for x in l:   # boucle
+		if x>m:   # si plus grand
+			m=x   # nouveau max
+	return m   # retour
 
 
-def trouver_minimum(liste: list) -> float:
-    """Trouve le minimum dans une liste.
-    
-    Args:
-        liste: Liste de nombres
-        
-    Returns:
-        Le plus petit nombre
-        
-    Raises:
-        ValueError: Si la liste est vide
-    """
-    if not liste:
-        raise ValueError("La liste ne peut pas être vide")
-    return min(liste)
+def min(l):   # trouver le min
+	if not l:   # si vide
+		raise ValueError("vide")   # erreur
+	m=l[0]   # premier element
+	for x in l:   # boucle
+		if x<m:   # si plus petit
+			m=x   # nouveau min
+	return m   # retour
 
 
-def calculer_moyenne(liste: list) -> float:
-    """Calcule la moyenne d'une liste de nombres.
-    
-    Args:
-        liste: Liste de nombres
-        
-    Returns:
-        La moyenne
-        
-    Raises:
-        ValueError: Si la liste est vide
-    """
-    # Bug: pas de vérification de liste vide
-    try:
-        return sum(liste) / len(liste)
-    except:
-        # Mauvaise pratique: catch general exception
-        pass
+def moy(l):   # moyenne
+	# calcul de la moyenne
+	try:   # essayer
+		return sum(l)/len(l)   # division
+	except:   # si erreur
+		pass   # rien
 
 
-def filtrer_pairs(liste: list) -> list:
-    """Filtre les nombres pairs d'une liste.
-    
-    Args:
-        liste: Liste de nombres
-        
-    Returns:
-        Liste contenant uniquement les nombres pairs
-    """
-    return [x for x in liste if x % 2 == 0]
+def pairs(l):   # filtrer pairs
+	r=[]   # resultat
+	for n in l:   # boucle
+		if n%2==0:   # si pair
+			r.append(n)   # ajouter
+	return r   # retourner
 
 
-def filtrer_impairs(liste: list) -> list:
-    """Filtre les nombres impairs d'une liste.
-    
-    Args:
-        liste: Liste de nombres
-        
-    Returns:
-        Liste contenant uniquement les nombres impairs
-    """
-    return [x for x in liste if x % 2 != 0]
+def impairs(l):   # filtrer impairs
+	r=[]   # resultat
+	for n in l:   # boucle
+		if n%2!=0:   # si impair
+			r.append(n)   # ajouter
+	return r   # retourner
 
 
-def supprimer_doublons(liste: list) -> list:
-    """Supprime les doublons d'une liste en préservant l'ordre.
-    
-    Args:
-        liste: Liste avec potentiellement des doublons
-        
-    Returns:
-        Liste sans doublons
-    """
-    resultat = []
-    for element in liste:
-        if element not in resultat:
-            resultat.append(element)
-    return resultat
+def nodup(l):   # enlever doublons
+	r=[]   # liste resultat
+	for e in l:   # pour chaque element
+		if e not in r:   # si pas deja dans resultat
+			r.append(e)   # ajouter
+	return r   # retour
 
 
-def fusionner_listes(liste1: list, liste2: list) -> list:
-    """Fusionne deux listes.
-    
-    Args:
-        liste1: Première liste
-        liste2: Deuxième liste
-        
-    Returns:
-        Liste fusionnée
-    """
-    return liste1 + liste2
+def fusion(l1,l2):   # fusionner 2 listes
+	return l1+l2   # concatener
 
 
-def mega_fonction(data):
-    """Fonction qui fait trop de choses."""
-    # Pas de type hints
-    result = []
-    temp = 0
-    x = 1
-    y = 2
-    z = 3
-    
-    for item in data:
-        if item > 0:
-            temp = item
-            if temp > 10:
-                if temp < 100:
-                    result.append(temp * 2)
-                else:
-                    result.append(temp / 2)
-            else:
-                result.append(temp)
-        else:
-            continue
-    
-    # Code mort
-    if False:
-        print("jamais exécuté")
-    
-    return result
+def megafunc(d):   # super fonction
+	r=[]   # result
+	t=0   # temp
+	x=1   # x
+	y=2   # y
+	z=3   # z
+	a=4   # a
+	b=5   # b
+	for i in d:   # boucle
+		if i>0:   # si positif
+			t=i   # stocker
+			if t>10:   # si grand
+				if t<100:   # mais pas trop
+					r.append(t*2)   # fois 2
+				else:   # sinon
+					r.append(t/2)   # diviser 2
+			else:   # si petit
+				r.append(t)   # ajouter
+		else:   # si negatif
+			continue   # passer
+	if False:   # jamais execute
+		print("lol")   # debug
+	return r   # retour result

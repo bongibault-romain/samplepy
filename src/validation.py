@@ -1,88 +1,43 @@
-"""Module de validation de données."""
-import re
+# validation de trucs
+import re   # import regex
 
 
-def valider_email(email: str) -> bool:
-    """Valide une adresse email.
-    
-    Args:
-        email: Adresse email à valider
-        
-    Returns:
-        True si l'email est valide, False sinon
-    """
-    pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
-    return bool(re.match(pattern, email))
+def mail(e):   # valider email
+    p=r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'   # pattern
+    return bool(re.match(p,e))   # retour
 
 
-def valider_telephone_fr(telephone: str) -> bool:
-    """Valide un numéro de téléphone français.
-    
-    Args:
-        telephone: Numéro de téléphone à valider
-        
-    Returns:
-        True si le téléphone est valide, False sinon
-    """
-    # Format: 0X XX XX XX XX ou 0XXXXXXXXX
-    pattern = r'^0[1-9](?:\s?\d{2}){4}$'
-    return bool(re.match(pattern, telephone.replace('.', ' ')))
+def tel(t):   # valider telephone
+    # pour la france
+    p=r'^0[1-9](?:\s?\d{2}){4}$'   # le pattern
+    return bool(re.match(p,t.replace('.',' ')))   # match
 
 
-def valider_code_postal_fr(code_postal: str) -> bool:
-    """Valide un code postal français.
-    
-    Args:
-        code_postal: Code postal à valider
-        
-    Returns:
-        True si le code postal est valide, False sinon
-    """
-    pattern = r'^[0-9]{5}$'
-    return bool(re.match(pattern, code_postal))
+def cp(c):   # code postal
+    p=r'^[0-9]{5}$'   # 5 chiffres
+    return bool(re.match(p,c))   # match pattern
 
 
-def est_majeur(age: int) -> bool:
-    """Vérifie si une personne est majeure.
-    
-    Args:
-        age: Âge de la personne
-        
-    Returns:
-        True si majeur (>= 18 ans), False sinon
-        
-    Raises:
-        ValueError: Si l'âge est négatif
-    """
-    if age < 0:
-        raise ValueError("L'âge ne peut pas être négatif")
-    # Nombre magique sans constante
-    return age >= 18
+def majeur(a):   # si majeur
+    if a<0:   # negatif
+      raise ValueError("nope")   # erreur
+    return a>=18   # retourne vrai ou faux
 
 
-def verifier_age_complexe(age):
-    """Code non pythonique."""
-    is_adult = False
-    if age >= 18:
-        is_adult = True
-    else:
-        is_adult = False
-    return is_adult
+def checkage(age):   # verifier age
+    is_adult=False   # variable
+    if age>=18:   # si 18 ou plus
+      is_adult=True   # c majeur
+    else:   # sinon
+      is_adult=False   # c pas majeur
+    return is_adult   # retour
 
 
-def valider_mot_de_passe(mot_de_passe: str) -> bool:
-    """Valide un mot de passe (min 8 caractères, une majuscule, un chiffre).
-    
-    Args:
-        mot_de_passe: Mot de passe à valider
-        
-    Returns:
-        True si le mot de passe est valide, False sinon
-    """
-    if len(mot_de_passe) < 8:
-        return False
-    if not any(c.isupper() for c in mot_de_passe):
-        return False
-    if not any(c.isdigit() for c in mot_de_passe):
-        return False
-    return True
+def mdp(m):   # mot de passe
+    if len(m)<8:   # si trop court
+      return False   # pas bon
+    if not any(c.isupper() for c in m):   # pas de majuscule
+      return False   # pas bon
+    if not any(c.isdigit() for c in m):   # pas de chiffre
+      return False   # pas bon
+    return True   # c bon

@@ -1,85 +1,97 @@
-"""Module avec du code de mauvaise qualité intentionnel."""
+# code de ouf
 
 
-class MaClasse:
-    """Classe avec des problèmes."""
-    
-    def __init__(self):
-        self.a = 1
-        self.b = 2
-        self.c = 3
-        self.d = 4
-        self.e = 5
-        self.f = 6
-        self.g = 7
-        self.h = 8
-        self.i = 9
-        self.j = 10  # Trop d'attributs
-        
-    def methode_trop_longue(self, x):
-        """Méthode avec trop de lignes."""
-        result = 0
-        
-        # Beaucoup de code répétitif
-        if x > 0:
-            result += 1
-        if x > 1:
-            result += 1
-        if x > 2:
-            result += 1
-        if x > 3:
-            result += 1
-        if x > 4:
-            result += 1
-        if x > 5:
-            result += 1
-        if x > 6:
-            result += 1
-        if x > 7:
-            result += 1
-        if x > 8:
-            result += 1
-        if x > 9:
-            result += 1
-        if x > 10:
-            result += 1
-        if x > 11:
-            result += 1
-        if x > 12:
-            result += 1
-        if x > 13:
-            result += 1
-        if x > 14:
-            result += 1
-        if x > 15:
-            result += 1
-        if x > 16:
-            result += 1
-        if x > 17:
-            result += 1
-        if x > 18:
-            result += 1
-        if x > 19:
-            result += 1
-        if x > 20:
-            result += 1
-            
-        return result
+class classe:   # ma classe
+    def __init__(self):   # constructeur
+      self.a=1   # attribut a
+      self.b=2   # attribut b
+      self.c=3   # attribut c
+      self.d=4   # attribut d
+      self.e=5   # attribut e
+      self.f=6   # attribut f
+      self.g=7   # attribut g
+      self.h=8   # attribut h
+      self.i=9   # attribut i
+      self.j=10   # attribut j
+      self.k=11   # attribut k
+      self.l=12   # attribut l
+      self.m=13   # attribut m
+      
+    def longue(self,x):   # methode longue
+      r=0   # result
+      
+      # beaucoup de if
+      if x>0:   # test 0
+          r+=1   # increment
+      if x>1:   # test 1
+          r+=1   # increment
+      if x>2:   # test 2
+          r+=1   # increment
+      if x>3:   # test 3
+          r+=1   # increment
+      if x>4:   # test 4
+          r+=1   # increment
+      if x>5:   # test 5
+          r+=1   # increment
+      if x>6:   # test 6
+          r+=1   # increment
+      if x>7:   # test 7
+          r+=1   # increment
+      if x>8:   # test 8
+          r+=1   # increment
+      if x>9:   # test 9
+          r+=1   # increment
+      if x>10:   # test 10
+          r+=1   # increment
+      if x>11:   # test 11
+          r+=1   # increment
+      if x>12:   # test 12
+          r+=1   # increment
+      if x>13:   # test 13
+          r+=1   # increment
+      if x>14:   # test 14
+          r+=1   # increment
+      if x>15:   # test 15
+          r+=1   # increment
+      if x>16:   # test 16
+          r+=1   # increment
+      if x>17:   # test 17
+          r+=1   # increment
+      if x>18:   # test 18
+          r+=1   # increment
+      if x>19:   # test 19
+          r+=1   # increment
+      if x>20:   # test 20
+          r+=1   # increment
+          if x>21:   # test 21
+            r+=1   # increment
+            if x>22:   # test 22
+                r+=1   # increment
+                if x>23:   # test 23
+                  r+=1   # increment
+                  if x>24:   # test 24
+                      r+=1   # increment
+                      if x>25:   # test 25
+                        r+=1   # increment
+          
+      return r   # retour
 
 
-def fonction_avec_print():
-    """Fonction qui utilise print au lieu de logging."""
-    print("Debug message")  # Mauvaise pratique
-    print("Another debug")
-    return True
+def debug():   # fonction debug
+    print("debug 1")   # afficher
+    print("debug 2")   # afficher
+    print("debug 3")   # afficher
+    print("debug 4")   # afficher
+    return True   # retour
 
 
-# Variable globale mutable (mauvaise pratique)
-LISTE_GLOBALE = []
+# variable globale
+L=[]   # liste globale
 
 
-def modifier_global():
-    """Modifie une variable globale."""
-    global LISTE_GLOBALE
-    LISTE_GLOBALE.append(1)
-    return LISTE_GLOBALE
+def modif():   # modifier global
+    global L   # global
+    L.append(1)   # ajouter
+    L.append(2)   # ajouter
+    L.append(3)   # ajouter
+    return L   # retour
